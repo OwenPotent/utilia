@@ -1,7 +1,7 @@
 import * as Canvas from "canvas"
 import * as path from "path"
 
-Canvas.registerFont(path.resolve(__dirname, "../assets/Swift.ttf"), {
+Canvas.registerFont(path.resolve(__dirname, "../../assets/Swift.ttf"), {
     family: "swift"
 })
 

@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getInv = void 0;
 const centra_1 = __importDefault(require("centra"));
 /**
  *
@@ -20,7 +21,7 @@ const centra_1 = __importDefault(require("centra"));
  * @param withCounts Default to true
  * @returns A json output of the code given
  */
-module.exports = function getInv(inviteCode, size = 64, withCounts = true) {
+function getInv(inviteCode, size = 64, withCounts = true) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
             centra_1.default(`https://discord.com/api/v8/invites/${inviteCode}?with_counts=${withCounts}`, 'GET').send().then((result) => {
@@ -41,4 +42,5 @@ module.exports = function getInv(inviteCode, size = 64, withCounts = true) {
             });
         }));
     });
-};
+}
+exports.getInv = getInv;

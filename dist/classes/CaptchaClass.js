@@ -19,9 +19,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Captcha = void 0;
 const Canvas = __importStar(require("canvas"));
 const path = __importStar(require("path"));
-Canvas.registerFont(path.resolve(__dirname, "../assets/Swift.ttf"), {
+Canvas.registerFont(path.resolve(__dirname, "../../assets/Swift.ttf"), {
     family: "swift"
 });
 const randomText = () => Math.random()
@@ -115,3 +116,4 @@ class Captcha {
         return this._canvas.toDataURL("image/jpeg");
     }
 }
+exports.Captcha = Captcha;

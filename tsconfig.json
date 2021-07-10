@@ -10,7 +10,7 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "moduleResolution": "Node",
-        "allowJs": true
+        "allowJs": true,
     },
     "exclude": [
         "node_modules"
