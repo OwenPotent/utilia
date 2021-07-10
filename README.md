@@ -1,5 +1,5 @@
 # discord-utils
- An NPM package for you to use on your Discord Bot or Javascript projects!
+ An NPM package for you to use on your Discord Bot or Javascript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
 
  ## Getting started
 
