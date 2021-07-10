@@ -28,7 +28,7 @@ const randomText = (): string =>
 /**
  * Generates a Captcha Image
  */
-export default class Captcha {
+class Captcha {
     private _canvas: Canvas.Canvas;
     private _value: string;
 

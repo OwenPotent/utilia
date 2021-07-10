@@ -13,7 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const centra_1 = __importDefault(require("centra"));
-function getInv(inviteCode, size = 64, withCounts = true) {
+/**
+ *
+ * @param inviteCode Invite code from the discord invite url
+ * @param size used for server icon size (Default is 64)
+ * @param withCounts Default to true
+ * @returns A json output of the code given
+ */
+module.exports = function getInv(inviteCode, size = 64, withCounts = true) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
             centra_1.default(`https://discord.com/api/v8/invites/${inviteCode}?with_counts=${withCounts}`, 'GET').send().then((result) => {
@@ -34,5 +41,4 @@ function getInv(inviteCode, size = 64, withCounts = true) {
             });
         }));
     });
-}
-exports.default = getInv;
+};

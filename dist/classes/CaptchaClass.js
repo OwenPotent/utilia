@@ -39,6 +39,9 @@ const randomText = () => Math.random()
     }
     return arr;
 };
+/**
+ * Generates a Captcha Image
+ */
 class Captcha {
     constructor(_h = 250) {
         _h = typeof _h !== "number" || _h < 250 ? 250 : _h > 400 ? 400 : _h;
@@ -112,4 +115,3 @@ class Captcha {
         return this._canvas.toDataURL("image/jpeg");
     }
 }
-exports.default = Captcha;

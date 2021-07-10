@@ -1,15 +1,16 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const GenerateImg_1 = require("./function/GenerateImg");
-const GetInv_1 = __importDefault(require("./function/Invites/GetInv"));
-const GetCodeFromUrl_1 = __importDefault(require("./function/Invites/GetCodeFromUrl"));
-const CaptchaClass_1 = __importDefault(require("./classes/CaptchaClass"));
-module.exports = {
-    generateImg: GenerateImg_1.generateImg,
-    getInv: GetInv_1.default,
-    getCodeFromUrl: GetCodeFromUrl_1.default,
-    Captcha: CaptchaClass_1.default
-};
+__exportStar(require("./function/GenerateImg"), exports);
+__exportStar(require("./function/Invites/GetInv"), exports);
+__exportStar(require("./classes/CaptchaClass"), exports);
+__exportStar(require("./function/Invites/GetCodeFromUrl"), exports);

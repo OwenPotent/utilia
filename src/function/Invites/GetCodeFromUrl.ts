@@ -4,7 +4,7 @@
  * @returns The invite cord
  */
 
-export default function getCodeFromUrl(url: string) {
+export async function getCodeFromUrl(url: string) {
     url = url.split('discord.com/').join('');
     url = url.split('discord.gg/').join('');
     url = url.split('invite/').join('');
