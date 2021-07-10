@@ -1,1 +1,0 @@
-export type ImageApiEndpoints = "cat" | "dog" | "waifu" | "neko"
