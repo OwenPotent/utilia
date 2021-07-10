@@ -1,0 +1,6 @@
+{
+    "catUrl": "https://api.thecatapi.com/v1/images/search",
+    "dogUrl": "https://api.thedogapi.com/v1/images/search",
+    "waifuUrl": "https://nekos.life/api/v2/img/waifu",
+    "nekoUrl": "https://nekos.life/api/neko"
+}
