@@ -16,7 +16,7 @@ import { ImageApiEndpoints } from "../custom/types/ImageApiEndpoints";
  * @returns 
  */
 
-async function generateImg(imageType: ImageApiEndpoints): Promise<void> {
+export async function generateImg(imageType: ImageApiEndpoints): Promise<void> {
     if (!imageType) throw new TypeError("Please specify an image type to generate the image!")
 
     switch (imageType) {

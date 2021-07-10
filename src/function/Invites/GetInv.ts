@@ -7,7 +7,7 @@ import centra from "centra"
  * @param withCounts Default to true
  * @returns A json output of the code given
  */
-module.exports = async function getInv(inviteCode: string, size: number = 64, withCounts: boolean = true): Promise<void> {
+export async function getInv(inviteCode: string, size: number = 64, withCounts: boolean = true): Promise<void> {
     return new Promise(async (resolve, reject) => {
         centra(`https://discord.com/api/v8/invites/${inviteCode}?with_counts=${withCounts}`, 'GET').send().then((result) => {
             if (result.statusCode !== 200) return reject(result.statusCode);
