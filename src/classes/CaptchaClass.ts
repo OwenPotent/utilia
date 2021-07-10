@@ -25,6 +25,9 @@ const randomText = (): string =>
         return arr;
     };
 
+/**
+ * Generates a Captcha Image
+ */
 export default class Captcha {
     private _canvas: Canvas.Canvas;
     private _value: string;

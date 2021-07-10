@@ -1,5 +1,12 @@
 import centra from "centra"
 
+/**
+ * 
+ * @param inviteCode Invite code from the discord invite url
+ * @param size used for server icon size (Default is 64)
+ * @param withCounts Default to true
+ * @returns A json output of the code given
+ */
 export default async function getInv(inviteCode: string, size: number = 64, withCounts: boolean = true): Promise<void> {
     return new Promise(async (resolve, reject) => {
         centra(`https://discord.com/api/v8/invites/${inviteCode}?with_counts=${withCounts}`, 'GET').send().then((result) => {
