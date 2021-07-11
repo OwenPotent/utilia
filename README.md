@@ -17,4 +17,41 @@ With Yarn:
 yarn add utilia
 ```
 
-# More Coming soon!
+## Table of Contents
+
+- [Captcha](#Captcha)
+- [QRCode](#QRCode)
+
+# Captcha
+
+Generates a captcha value and an image
+
+Example:
+
+```js
+const { Captcha } = require('utilia')
+
+// New Captcha Client
+const captcha = new Captcha()
+
+// Outputs the value of the image
+console.log(captcha.value)
+```
+
+```js
+const { QRCode } = require('utilia')
+
+// New QRCode Client
+const qr = new QRCode({
+    // Data - your url
+    data: "owenpotent.xyz"
+})
+
+// Generate the QRCode link
+const qrcode = qr.genQR()
+
+// Outputs the qrcode link
+console.log(qrcode)
+```
+
+## More coming soon!
