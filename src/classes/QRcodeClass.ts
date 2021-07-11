@@ -2,18 +2,17 @@ import { parameters } from "../types/enums"
 
 export class QRCode {
 
-    private _data = "google.com"
+    private _data = ""
 
     private parametersJson = {
         "size": 250, // Size of Qr Code
         "backgroundColor": "38-38-38", // Background Color Of Qr Code (In RGB)
         "qrColor": "255-255-255", // Color of Qr Code (In RGB)
-        "padding": 2, // Padding 
-        "data": this._data
+        "padding": 2, // Padding
     };
 
     constructor(parameters: parameters) {
-        this._data = this._data || parameters.data || this.parametersJson.data
+        this._data = parameters.data
     }
 
     /**

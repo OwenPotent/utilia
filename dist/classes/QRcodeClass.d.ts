@@ -1,3 +1,11 @@
+import { parameters } from "../types/enums";
 export declare class QRCode {
-    static genQRCode(data: string): string;
+    private _data;
+    private parametersJson;
+    constructor(parameters: parameters);
+    /**
+     *
+     * @returns the QRcode link
+     */
+    genQR(): string;
 }
