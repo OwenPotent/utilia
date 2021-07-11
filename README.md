@@ -21,6 +21,8 @@ yarn add utilia
 
 - [Captcha](#Captcha)
 - [QRCode](#QRCode)
+- [Utils](#Utils)
+- [API](#API)
 
 # Captcha
 
@@ -56,4 +58,29 @@ const qrcode = qr.genQR()
 console.log(qrcode)
 ```
 
+# Utils
+
+```js
+const { Utils } = require('utilia')
+
+const util = new Utils()
+
+const textHi = "hash time"
+const hash = util.createHash(textHi, "sha256")
+
+console.log(hash) // Outputs hash: e624d76c1654e78cd3479aaeaec930a6f194ab349878201d645de8912fb8a4ca
+```
+
+# API
+```js
+const { Api } = require('utilia')
+
+const api = new Api()
+
+const text = "Hello world"
+
+api.encode(text).then((data) => {
+    console.log(data) // Outputs binary code : '0100100001100101011011000110110001101111001000000111011101101111011100100110110001100100
+})
+```
 ## More coming soon!
