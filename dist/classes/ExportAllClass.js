@@ -12,3 +12,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./CaptchaClass"), exports);
 __exportStar(require("./QRcodeClass"), exports);
+__exportStar(require("./UtilsClass"), exports);
+__exportStar(require("./ApiClass"), exports);
