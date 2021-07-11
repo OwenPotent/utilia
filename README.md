@@ -38,6 +38,8 @@ const captcha = new Captcha()
 console.log(captcha.value)
 ```
 
+# QRCode
+
 ```js
 const { QRCode } = require('utilia')
 
