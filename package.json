@@ -15,7 +15,7 @@
   "author": "OwenPotent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OwenPotent/discord-utils"
+    "url": "https://github.com/OwenPotent/utilia"
   },
   "license": "ISC",
   "dependencies": {
