@@ -1,7 +1,14 @@
 # discord-utils
- An NPM package for you to use on your Discord Bot or Javascript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
+ An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
 
- ## Getting started
+## What's New?
+
+I've added a few new funcions inside the classes, and added a new self functions such as `generatePassword()`
+and `genPin()`
+
+- Added tinyurl function in `Api` class (Api.tinyurl(url, alias))
+- Added ceaserCipher function in `Utils` class (Utils.ceaserCipher(text, algorithm))
+ ## Getting Started
 
  To get started, install the npm package by running the command below:
 
@@ -21,6 +28,8 @@ yarn add utilia
 
 - [Captcha](##Captcha)
 - [QRCode](##QRCode)
+- [Api](##Api)
+- [Utils](##Utils)
 
 ## Captcha
 
@@ -82,5 +91,8 @@ const hash = util.createHash(textHi, "sha256")
 
 console.log(hash) // Outputs hash: e624d76c1654e78cd3479aaeaec930a6f194ab349878201d645de8912fb8a4ca
 ```
+
+# Links
+- [Source Code](https://github.com/OwenPotent/utilia)
 
 ## More coming soon!

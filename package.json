@@ -1,10 +1,10 @@
 {
   "name": "utilia",
-  "version": "1.5.5",
+  "version": "1.5.9",
   "description": "A utility package for you to use in your discord bot or javascript projects!",
   "main": "./dist",
   "scripts": {
-    "build": "tsc --build"
+    "build": "tsc --build && npm publish"
   },
   "keywords": [
     "util",
