@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/utilia.png)](https://nodei.co/npm/utilia/)
+
 # discord-utils
  An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
 
