@@ -1,11 +1,6 @@
 {
-<<<<<<< Updated upstream
-  "name": "utilia",
-  "version": "1.4.2",
-=======
   "name": "@owenpotent/utilia",
   "version": "1.5.5",
->>>>>>> Stashed changes
   "description": "A utility package for you to use in your discord bot or javascript projects!",
   "main": "./dist",
   "scripts": {
@@ -27,12 +22,9 @@
     "@sindresorhus/is": "^4.0.1",
     "canvas": "^2.8.0",
     "discord.js": "github:discordjs/discord.js",
-<<<<<<< Updated upstream
-=======
     "ky": "^0.28.5",
     "ky-universal": "^0.9.1",
     "mongoose": "^5.13.2",
->>>>>>> Stashed changes
     "ms": "^2.1.3",
     "node-fetch": "^2.6.1",
     "query-string": "^7.0.1",
