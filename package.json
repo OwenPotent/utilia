@@ -1,6 +1,6 @@
 {
   "name": "utilia",
-  "version": "1.6.0",
+  "version": "1.6.2",
   "description": "A utility package for you to use in your discord bot or javascript projects!",
   "main": "./dist",
   "scripts": {
@@ -20,7 +20,6 @@
   "dependencies": {
     "@sindresorhus/is": "^4.0.1",
     "canvas": "^2.8.0",
-    "discord.js": "github:discordjs/discord.js",
     "ky": "^0.28.5",
     "ky-universal": "^0.9.1",
     "mongoose": "^5.13.2",
