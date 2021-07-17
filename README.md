@@ -7,7 +7,6 @@
 
 ### Added
 - NitroChecking functions (Utilia.hasNitro(user: User))
-
 ## TODO
 
 - Work on custom embed class
