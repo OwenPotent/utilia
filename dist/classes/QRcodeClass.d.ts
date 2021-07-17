@@ -1,4 +1,4 @@
-import { parameters } from "../types/enums";
+import { parameters } from "../types/types";
 export declare class QRCode {
     private _data;
     private parametersJson;

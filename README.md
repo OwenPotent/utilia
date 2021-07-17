@@ -1,15 +1,17 @@
 [![NPM](https://nodei.co/npm/utilia.png)](https://nodei.co/npm/utilia/)
 
-# discord-utils
+# Utilia
  An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
 
 ## What's New?
 
-I've added a few new funcions inside the classes, and added a new self functions such as `generatePassword()`
-and `genPin()`
+### Added
+- NitroChecking functions (Utilia.hasNitro(user: User))
 
-- Added tinyurl function in `Api` class (Api.tinyurl(url, alias))
-- Added ceaserCipher function in `Utils` class (Utils.ceaserCipher(text, algorithm))
+## TODO
+
+- Work on custom embed class
+
  ## Getting Started
 
  To get started, install the npm package by running the command below:
@@ -93,6 +95,12 @@ const hash = util.createHash(textHi, "sha256")
 
 console.log(hash) // Outputs hash: e624d76c1654e78cd3479aaeaec930a6f194ab349878201d645de8912fb8a4ca
 ```
+
+# Additional Info
+
+Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the [discord.js](https://discord.js.org) MessageEmbed class.
+Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69's [discord-premium-utils](https://www.npmjs.com/package/discord-premium-utils) dependency.
+
 
 # Links
 - [Source Code](https://github.com/OwenPotent/utilia)

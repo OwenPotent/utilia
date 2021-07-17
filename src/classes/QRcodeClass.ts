@@ -1,4 +1,4 @@
-import { parameters } from "../types/enums"
+import { parameters } from "../types/types"
 
 export class QRCode {
 

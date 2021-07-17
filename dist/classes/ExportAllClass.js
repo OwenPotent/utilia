@@ -14,3 +14,8 @@ __exportStar(require("./CaptchaClass"), exports);
 __exportStar(require("./QRcodeClass"), exports);
 __exportStar(require("./ApiClass"), exports);
 __exportStar(require("./UtilsClass"), exports);
+/**
+ * ! EmbedClass is still in progress!
+ * TODO: Finish EmbedClass
+ */
+// * export * from "./EmbedClass"
