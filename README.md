@@ -98,8 +98,8 @@ console.log(hash) // Outputs hash: e624d76c1654e78cd3479aaeaec930a6f194ab3498782
 
 # Additional Info
 
-Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the [discord.js](https://discord.js.org) MessageEmbed class.
-Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69's [discord-premium-utils](https://www.npmjs.com/package/discord-premium-utils) dependency.
+Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the [discord.js](https://discord.js.org) MessageEmbed class.  
+Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69's [discord-premium-utils](https://www.npmjs.com/package/discord-premium-utils) dependency.  
 
 
 # Links
