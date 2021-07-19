@@ -1,3 +1,4 @@
+import { ColorResolvable } from "../constants/constants";
 declare type padding = "1" | "2" | "3" | "4" | "5";
 export interface parameters {
     size?: number | 250;
@@ -16,9 +17,9 @@ interface EmbedderFooterOptions {
     avatarURL?: string | undefined;
 }
 export interface EmbedderOptions {
-    title: string | undefined;
-    description: string | undefined;
-    color: string;
+    title?: string | undefined;
+    description?: string | undefined;
+    color?: string | ColorResolvable;
     footer?: EmbedderFooterOptions;
     author?: {
         name: string | undefined;
@@ -31,5 +32,14 @@ export interface EmbedderOptions {
     thumbnail?: string;
     timestamp?: number | Date | undefined;
     url?: string;
+}
+export interface loggerOptions {
+    useDefault?: boolean | true;
+    useCustomLabel?: {
+        ready?: string;
+        error?: string;
+        warn?: string;
+        success?: string;
+    };
 }
 export {};
