@@ -1,11 +1,12 @@
 {
   "name": "utilia",
-  "version": "1.7.0",
+  "version": "1.7.2",
   "description": "A utility package for you to use in your discord bot or javascript projects!",
   "main": "./dist",
   "scripts": {
-    "build": "tsc --build && npm publish",
-    "docs": "typedoc src/index.ts"
+    "build": "tsc --build",
+    "docs": "typedoc src/index.ts",
+    "publish": "npm publish"
   },
   "license": "ISC",
   "dependencies": {
@@ -45,6 +46,5 @@
     "type": "git",
     "url": "https://github.com/OwenPotent/utilia"
   },
-  "types": "dist",
   "homepage": "https://owenpotent.github.io/utilia"
 }
