@@ -1,8 +1,20 @@
 import { loggerOptions } from "../types/types";
 export declare class Logger {
-    private _useDefault?;
-    private _useCustomLabel?;
-    private _defaultOptions;
+    _useDefault?: boolean | true;
+    _useCustomLabel?: {
+        ready?: string;
+        error?: string;
+        warn?: string;
+        success?: string;
+    };
+    _defaultOptions: {
+        symbols: {
+            ready: "⭕️";
+            error: "✖";
+            warn: "❗";
+            success: "✔";
+        };
+    };
     constructor(options: loggerOptions);
     private ResolveChalkColor;
     /**
@@ -19,10 +31,10 @@ export declare class Logger {
      * Prints out a "error" log to the console
      * @param confirmRedify Whether you want the content given to be red colored
      */
-    error(content: any, confirmRedify: boolean): void;
+    error(content: any, confirmRedify?: boolean): void;
     /**
      * Prints out a "success" log to the console
      * @param confirmGreenify Whether you want the content given to be green colored
      */
-    success(content: any, confirmGreenify: boolean): void;
+    success(content: any, confirmGreenify?: boolean): void;
 }

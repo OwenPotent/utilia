@@ -3,14 +3,14 @@ import { loggerOptions } from "../types/types";
 import { LoggerColors } from "../constants/constants";
 
 export class Logger {
-    private _useDefault?: boolean | true
-    private _useCustomLabel?: {
+    public _useDefault?: boolean | true
+    public _useCustomLabel?: {
         ready?: string,
         error?: string,
         warn?: string,
         success?: string
     }
-    private _defaultOptions!: {
+    public _defaultOptions!: {
         symbols: {
             ready: "⭕️",
             error: "✖",
@@ -113,7 +113,7 @@ export class Logger {
      * Prints out a "error" log to the console
      * @param confirmRedify Whether you want the content given to be red colored
      */
-    public error(content: any, confirmRedify: boolean) {
+    public error(content: any, confirmRedify?: boolean) {
         let errorSymbol: string | undefined;
 
         let redify = chalk.red
@@ -135,7 +135,7 @@ export class Logger {
      * Prints out a "success" log to the console
      * @param confirmGreenify Whether you want the content given to be green colored
      */
-    public success(content: any, confirmGreenify: boolean) {
+    public success(content: any, confirmGreenify?: boolean) {
         let successSymbol: string | undefined
 
         let greenify = chalk.green

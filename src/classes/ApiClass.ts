@@ -1,12 +1,4 @@
 import fetch from "node-fetch";
-import ky from "ky-universal";
-
-ky.create({
-    throwHttpErrors: false
-})
-
-import { assert } from "@sindresorhus/is";
-import queryString from "query-string";
 
 export class Api {
     private _url = "https://api.popcatdev.repl.co/"
@@ -297,32 +289,5 @@ export class Api {
         let wyr = res.json()
 
         return wyr
-    }
-
-    /**
-     * Shorten a url with TinyURL
-     * 
-     * 
-     * @param url Url you wish to shorten
-     * @param alias alias The custom alias for the shortened url.
-     * @returns tinyurl URL
-     */
-
-    public async tinyUrl({ url, alias }: { url: string; alias: string; }): Promise<string> {
-        assert.string(url)
-
-        if (alias) {
-            assert.string(alias)
-        }
-
-        const res = await ky(this._tinyUrl, {
-            searchParams: queryString.stringify({ url, alias }, { encode: false })
-        }).text()
-
-        if (res === "Error") {
-            throw new Error("Utilia: The API was unable to shorten the url.")
-        }
-
-        return res
     }
 }

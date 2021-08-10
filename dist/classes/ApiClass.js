@@ -14,12 +14,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Api = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
-const ky_universal_1 = __importDefault(require("ky-universal"));
-ky_universal_1.default.create({
-    throwHttpErrors: false
-});
-const is_1 = require("@sindresorhus/is");
-const query_string_1 = __importDefault(require("query-string"));
 class Api {
     constructor() {
         this._url = "https://api.popcatdev.repl.co/";
@@ -279,29 +273,6 @@ class Api {
             }
             let wyr = res.json();
             return wyr;
-        });
-    }
-    /**
-     * Shorten a url with TinyURL
-     *
-     *
-     * @param url Url you wish to shorten
-     * @param alias alias The custom alias for the shortened url.
-     * @returns tinyurl URL
-     */
-    tinyUrl({ url, alias }) {
-        return __awaiter(this, void 0, void 0, function* () {
-            is_1.assert.string(url);
-            if (alias) {
-                is_1.assert.string(alias);
-            }
-            const res = yield ky_universal_1.default(this._tinyUrl, {
-                searchParams: query_string_1.default.stringify({ url, alias }, { encode: false })
-            }).text();
-            if (res === "Error") {
-                throw new Error("Utilia: The API was unable to shorten the url.");
-            }
-            return res;
         });
     }
 }

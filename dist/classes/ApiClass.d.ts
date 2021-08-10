@@ -89,16 +89,4 @@ export declare class Api {
      * @returns Two options
      */
     wyr(): Promise<any>;
-    /**
-     * Shorten a url with TinyURL
-     *
-     *
-     * @param url Url you wish to shorten
-     * @param alias alias The custom alias for the shortened url.
-     * @returns tinyurl URL
-     */
-    tinyUrl({ url, alias }: {
-        url: string;
-        alias: string;
-    }): Promise<string>;
 }
