@@ -68,4 +68,4 @@ export type LoggerColors =
     "GREEN" |
     "WHITE" |
     "DEFAULT" |
-    "BLUE"
+    "BLUE";

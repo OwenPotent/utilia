@@ -27,7 +27,7 @@ class Api {
     getJoke() {
         return __awaiter(this, void 0, void 0, function* () {
             this._url += 'joke';
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -48,7 +48,7 @@ class Api {
             if (typeof text !== 'string')
                 throw new TypeError("Utilia: text is not a type of string.");
             this._url += `encode?text=${text}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -69,7 +69,7 @@ class Api {
             if (typeof binaryCode !== 'number')
                 throw new TypeError("Utilia: binary is not a type of number.");
             this._url += `decode?binary=${binaryCode}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -93,7 +93,7 @@ class Api {
             if (!colorHex.startsWith("#"))
                 throw new Error("Utilia: colorHex must start with a \"#\"");
             this._url += `color/${colorHex}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -114,7 +114,7 @@ class Api {
             if (typeof text !== 'string')
                 throw new TypeError("Utilia: text is not a type of string.");
             this._url += `mock?text=${text}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -130,7 +130,7 @@ class Api {
     getMeme() {
         return __awaiter(this, void 0, void 0, function* () {
             this._url += `meme`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -146,7 +146,7 @@ class Api {
     eightBall() {
         return __awaiter(this, void 0, void 0, function* () {
             this._url += `8ball`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -167,7 +167,7 @@ class Api {
             if (typeof text !== 'string')
                 throw new TypeError("Utilia: text is not a type of string.");
             this._url += `reverse?text${text}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -188,7 +188,7 @@ class Api {
             if (typeof app !== 'string')
                 throw new TypeError("Utilia: app is not a type of string.");
             this._url += `playstore?q=${app}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -209,7 +209,7 @@ class Api {
             if (typeof song !== 'string')
                 throw new TypeError("Utilia: song is not a type of string.");
             this._url += `itunes?q=${song}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -230,7 +230,7 @@ class Api {
             if (typeof text !== 'string')
                 throw new TypeError("Utilia: text is not a type of string.");
             this._url += `doublestruck?text=${text}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -251,7 +251,7 @@ class Api {
             if (typeof text !== 'string')
                 throw new TypeError("Utilia: text is not a type of string.");
             this._url += `texttomorse?text=${text}`;
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }
@@ -267,7 +267,7 @@ class Api {
     wyr() {
         return __awaiter(this, void 0, void 0, function* () {
             this._url += 'wyr';
-            let res = yield node_fetch_1.default(this._url);
+            let res = yield (0, node_fetch_1.default)(this._url);
             if (!res) {
                 return "No data available";
             }

@@ -12,3 +12,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./GeneratePassword"), exports);
 __exportStar(require("./NitroChecking"), exports);
+__exportStar(require("./CheckForContents"), exports);
+__exportStar(require("./GetAllFiles"), exports);

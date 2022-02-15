@@ -1,28 +1,60 @@
-import { MessageEmbed } from "discord.js";
-import { ColorResolvable, Colors } from "../constants/constants";
+import { MessageEmbed, MessageEmbedOptions } from "discord.js";
 import { EmbedderOptions } from "../types/types";
-// TODO: Create custom embed class
-// ! Embedder not useable!
 
+/**
+ * Advanced MessageEmbed 
+ */
 export class Embedder {
-    private _useCodeblockInDescription?: boolean
-    private _useBoldInDescription?: boolean
-    private _useTimestamp?: boolean
+    private EmbedOptions = {
+        useCodeblockInDescription: false,
+        useBoldInDescription: false,
+        useTimestamp: false
+    }
 
-
-    constructor(options: EmbedderOptions) {
-        if (options.useBoldInDescription) {
-            this._useCodeblockInDescription = options.useBoldInDescription
-        }
-
-        if (options.useBoldInDescription) {
-            this._useBoldInDescription = options.useBoldInDescription
-        }
-
-        if (options.useTimestamp) {
-            this._useTimestamp = options.useTimestamp
+    constructor(private options: EmbedderOptions = {}) {
+        this.EmbedOptions = {
+            ...this.EmbedOptions,
+            ...options
         }
     }
 
-    
+    // Add codeblock to description
+    public addCodeblock(description?: string): string | undefined {
+        if (this.EmbedOptions.useCodeblockInDescription) {
+            return `\`\`\`${description}\`\`\``;
+        }
+
+        return description;
+    }
+
+    // Add bold to description
+    public addBold(description?: string): string | undefined {
+        if (this.EmbedOptions.useBoldInDescription) {
+            return `**${description}**`;
+        }
+
+        return description;
+    }
+
+    // Add timestamp to description
+    public addTimestamp(description?: string): string | undefined {
+        if (this.EmbedOptions.useTimestamp) {
+            return `${description} ${new Date().toLocaleString()}`;
+        }
+
+        return description;
+    }
+
+    // Create embed and use function above
+    public createEmbed(embedOptions: MessageEmbedOptions): MessageEmbed {
+        const embed = new MessageEmbed(embedOptions);
+
+        if (this.EmbedOptions.useCodeblockInDescription) {
+            embed.setDescription(this.addCodeblock(embedOptions.description));
+        } else {
+            embed.setDescription(this.addBold(embedOptions.description));
+        }
+
+        return embed;
+    }
 }

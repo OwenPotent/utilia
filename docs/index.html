@@ -62,32 +62,70 @@
 				<a href="#utilia" id="utilia" style="color: inherit; text-decoration: none;">
 					<h1>Utilia</h1>
 				</a>
-				<p> An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!</p>
+				<p>An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!</p>
 				<a href="#what39s-new" id="what39s-new" style="color: inherit; text-decoration: none;">
 					<h2>What&#39;s New?</h2>
 				</a>
 				<a href="#added" id="added" style="color: inherit; text-decoration: none;">
-					<h3>Added</h3>
+					<h3>Added:</h3>
+				</a>
+				<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
+					<h4><strong>Functions</strong></h4>
 				</a>
 				<ul>
-					<li>LoggerClass | A more advanced but configurable logger that console logs useful information given. To use this refer to the example below:</li>
-				</ul>
-				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Logger</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;utilia&quot;</span><span style="color: #000000">)</span>
+					<li><p>checkForContents | This function checks if a file or directory exists.</p>
+						<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">fs</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;fs&quot;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">checkForContents</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;utilia&quot;</span><span style="color: #000000">);</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">logger</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Logger</span><span style="color: #000000">()</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">file</span><span style="color: #000000"> = </span><span style="color: #A31515">&quot;./test.txt&quot;</span><span style="color: #000000">;</span>
 
-<span style="color: #001080">logger</span><span style="color: #000000">.</span><span style="color: #795E26">success</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Hello world&quot;</span><span style="color: #000000">)</span>
+<span style="color: #008000">// Check for file</span>
+<span style="color: #795E26">checkForContents</span><span style="color: #000000">(</span><span style="color: #001080">file</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;file&quot;</span><span style="color: #000000">);</span>
 </code></pre>
-				<a href="#todo" id="todo" style="color: inherit; text-decoration: none;">
-					<h2>TODO</h2>
-				</a>
-				<ul>
-					<li>Work on custom embed class</li>
+					</li>
+					<li><p>getAllFiles | This function returns all files in a directory.</p>
+						<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">getAllFiles</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;utilia&quot;</span><span style="color: #000000">);</span>
+
+<span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #795E26">getAllFiles</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;./&quot;</span><span style="color: #000000">));</span>
+</code></pre>
+						<p>Output:</p>
+						<pre><code><span style="color: #000000">[</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;./README.md&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;./package.json&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;./package-lock.json&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;./test.txt&quot;</span>
+<span style="color: #000000">]</span>
+</code></pre>
+					</li>
 				</ul>
+				<a href="#classes" id="classes" style="color: inherit; text-decoration: none;">
+					<h4><strong>Classes</strong></h4>
+				</a>
+				<pre><code><span style="color: #000000">- </span><span style="color: #001080">Embedder</span><span style="color: #000000"> | </span><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">is</span><span style="color: #000000"> </span><span style="color: #267F99">an</span><span style="color: #000000"> </span><span style="color: #267F99">extended</span><span style="color: #000000"> </span><span style="color: #267F99">class</span><span style="color: #000000"> </span><span style="color: #267F99">of</span><span style="color: #000000"> </span><span style="color: #267F99">the</span><span style="color: #000000"> </span><span style="color: #267F99">Discord</span><span style="color: #000000">.</span><span style="color: #267F99">js</span><span style="color: #000000"> </span><span style="color: #267F99">Embed</span><span style="color: #000000"> </span><span style="color: #267F99">class</span><span style="color: #000000">.</span>
+
+<span style="color: #000000">```</span><span style="color: #267F99">js</span>
+<span style="color: #000000">  </span><span style="color: #267F99">const</span><span style="color: #000000"> { </span><span style="color: #001080">Embedder</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;utilia&quot;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">options</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">      </span><span style="color: #001080">useCodeblockInDescription:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">useBoldInDescription:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">useTimestamp:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span>
+<span style="color: #000000">  }</span>
+
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">embedder</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Embedder</span><span style="color: #000000">(</span><span style="color: #001080">options</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">embed</span><span style="color: #000000"> = </span><span style="color: #001080">embedder</span><span style="color: #000000">.</span><span style="color: #795E26">createEmbed</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Test&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;This is a test&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">color:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;red&quot;</span>
+<span style="color: #000000">    });</span>
+
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">embed</span><span style="color: #000000">);</span>
+<span style="color: #A31515">```</span>
+</code></pre>
 				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
 					<h2>Getting Started</h2>
 				</a>
-				<p> To get started, install the npm package by running the command below:</p>
+				<p>To get started, install the npm package by running the command below:</p>
 				<p>With NPM:</p>
 				<pre><code class="language-shell"><span style="color: #000000">npm install --save utilia</span>
 </code></pre>
@@ -97,7 +135,7 @@
 				<a href="#additional-info" id="additional-info" style="color: inherit; text-decoration: none;">
 					<h1>Additional Info</h1>
 				</a>
-				<p>Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the <a href="https://discord.js.org">discord.js</a> MessageEmbed class.<br>Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69&#39;s <a href="https://www.npmjs.com/package/discord-premium-utils">discord-premium-utils</a> dependency.  </p>
+				<p>Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the <a href="https://discord.js.org">discord.js</a> MessageEmbed class.<br>Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69&#39;s <a href="https://www.npmjs.com/package/discord-premium-utils">discord-premium-utils</a> dependency.</p>
 				<a href="#links" id="links" style="color: inherit; text-decoration: none;">
 					<h1>Links</h1>
 				</a>
@@ -127,6 +165,9 @@
 						<a href="classes/Captcha.html" class="tsd-kind-icon">Captcha</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/Embedder.html" class="tsd-kind-icon">Embedder</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/Logger.html" class="tsd-kind-icon">Logger</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -136,10 +177,16 @@
 						<a href="classes/Utils.html" class="tsd-kind-icon">Utils</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="modules.html#checkForContents" class="tsd-kind-icon">check<wbr>For<wbr>Contents</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="modules.html#genPin" class="tsd-kind-icon">gen<wbr>Pin</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#generatePassword" class="tsd-kind-icon">generate<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getAllFiles" class="tsd-kind-icon">get<wbr>All<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#hasNitro" class="tsd-kind-icon">has<wbr>Nitro</a>

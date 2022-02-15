@@ -15,8 +15,4 @@ __exportStar(require("./QRcodeClass"), exports);
 __exportStar(require("./ApiClass"), exports);
 __exportStar(require("./UtilsClass"), exports);
 __exportStar(require("./LoggerClass"), exports);
-/**
- * ! EmbedClass is still in progress!
- * TODO: Finish EmbedClass
- */
-// * export * from "./EmbedClass"
+__exportStar(require("./EmbedClass"), exports);
