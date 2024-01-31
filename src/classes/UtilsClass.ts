@@ -173,20 +173,6 @@ export class Utils {
         return `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
     }
 
-    /**
-     * Connects to the MongoDB Uri
-     * 
-     * @param url Your MongoDB Uri
-     * @returns 
-     */
-
-    public mongoConnect(url: string) {
-        return mongoose.connect(url, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
-    }
-
     private isUpperCase(string: string) {
         return string === string.toUpperCase()
     }

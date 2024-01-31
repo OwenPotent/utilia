@@ -1,9 +1,10 @@
 {
   "name": "utilia",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A utility package for you to use in your projects!",
   "main": "./dist/index.js",
   "scripts": {
+    "publish": "npm run build && npm publish",
     "build": "tsc --build && npm run docs",
     "build:dev": "tsc --build",
     "test": "node ./test/index.test.js",

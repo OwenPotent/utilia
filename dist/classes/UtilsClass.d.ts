@@ -1,4 +1,3 @@
-import * as mongoose from "mongoose";
 export declare class Utils {
     /**
      * shortens a text given
@@ -90,13 +89,6 @@ export declare class Utils {
      * @returns
      */
     formatDays(unicode: number): string;
-    /**
-     * Connects to the MongoDB Uri
-     *
-     * @param url Your MongoDB Uri
-     * @returns
-     */
-    mongoConnect(url: string): Promise<typeof mongoose>;
     private isUpperCase;
     /**
      * Converts your string into a cipher
