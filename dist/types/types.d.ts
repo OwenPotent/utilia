@@ -1,4 +1,4 @@
-declare type padding = "1" | "2" | "3" | "4" | "5";
+type padding = "1" | "2" | "3" | "4" | "5";
 export interface parameters {
     size?: number | 250;
     backgroundColor?: string | "38-38-38";
@@ -14,10 +14,5 @@ export interface loggerOptions {
         warn?: string;
         success?: string;
     };
-}
-export interface EmbedderOptions {
-    useCodeblockInDescription?: boolean;
-    useBoldInDescription?: boolean;
-    useTimestamp?: boolean;
 }
 export {};

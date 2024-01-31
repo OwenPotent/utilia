@@ -60,4 +60,4 @@ export declare enum ColorResolvable {
     "DARK_BUT_NOT_BLACK" = 27,
     "NOT_QUITE_BLACK" = 28
 }
-export declare type LoggerColors = "RED" | "YELLOW" | "GREEN" | "WHITE" | "DEFAULT" | "BLUE";
+export type LoggerColors = "RED" | "YELLOW" | "GREEN" | "WHITE" | "DEFAULT" | "BLUE";

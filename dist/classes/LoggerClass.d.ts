@@ -1,22 +1,10 @@
 import { loggerOptions } from "../types/types";
 export declare class Logger {
-    _useDefault?: boolean | true;
-    _useCustomLabel?: {
-        ready?: string;
-        error?: string;
-        warn?: string;
-        success?: string;
-    };
-    _defaultOptions: {
-        symbols: {
-            ready: "⭕️";
-            error: "✖";
-            warn: "❗";
-            success: "✔";
-        };
-    };
+    private _useDefault?;
+    private _useCustomLabel?;
+    private _defaultOptions;
     constructor(options: loggerOptions);
-    private ResolveChalkColor;
+    private resolveChalkColor;
     /**
      * Prints out a "ready" log to the console
      * @param confirmBlueify Whether you want the message to be blue colored

@@ -19,24 +19,20 @@ class Logger {
             }
         }
     }
-    ResolveChalkColor(color, content) {
-        if (color === "DEFAULT") {
-            return chalk_1.default.whiteBright(content);
-        }
-        if (color === "BLUE") {
-            return chalk_1.default.blueBright(content);
-        }
-        if (color === "RED") {
-            return chalk_1.default.redBright(content);
-        }
-        if (color === "GREEN") {
-            return chalk_1.default.greenBright(content);
-        }
-        if (color === "WHITE") {
-            return chalk_1.default.whiteBright(content);
-        }
-        if (color === "YELLOW") {
-            return chalk_1.default.yellowBright(content);
+    resolveChalkColor(color, content) {
+        switch (color) {
+            case "DEFAULT":
+                return chalk_1.default.whiteBright(content);
+            case "BLUE":
+                return chalk_1.default.blueBright(content);
+            case "RED":
+                return chalk_1.default.redBright(content);
+            case "GREEN":
+                return chalk_1.default.greenBright(content);
+            case "WHITE":
+                return chalk_1.default.whiteBright(content);
+            case "YELLOW":
+                return chalk_1.default.yellowBright(content);
         }
     }
     /**
@@ -46,12 +42,12 @@ class Logger {
     ready(content, confirmBlueify) {
         var _a;
         let readySymbol;
-        let blueify = chalk_1.default.blue;
+        const blueify = chalk_1.default.blue;
         if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.ready) {
-            readySymbol = this.ResolveChalkColor("BLUE", this._useCustomLabel.ready);
+            readySymbol = this.resolveChalkColor("BLUE", this._useCustomLabel.ready);
         }
         else {
-            readySymbol = this.ResolveChalkColor("BLUE", this._defaultOptions.symbols.ready);
+            readySymbol = this.resolveChalkColor("BLUE", this._defaultOptions.symbols.ready);
         }
         if (confirmBlueify) {
             if (typeof confirmBlueify !== "boolean") {
@@ -61,7 +57,7 @@ class Logger {
                 blueify(content);
             }
         }
-        return console.log(`${readySymbol} | ${content}`);
+        console.log(`${readySymbol} | ${content}`);
     }
     /**
      * Prints out a "warn" log to the console
@@ -70,17 +66,17 @@ class Logger {
     warn(content, confirmYellowify) {
         var _a;
         let warnSymbol;
-        let yellowify = chalk_1.default.yellow;
+        const yellowify = chalk_1.default.yellow;
         if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.warn) {
-            warnSymbol = this.ResolveChalkColor("YELLOW", this._useCustomLabel.warn);
+            warnSymbol = this.resolveChalkColor("YELLOW", this._useCustomLabel.warn);
         }
         else {
-            warnSymbol = this.ResolveChalkColor("YELLOW", this._defaultOptions.symbols.warn);
+            warnSymbol = this.resolveChalkColor("YELLOW", this._defaultOptions.symbols.warn);
         }
         if (confirmYellowify) {
             yellowify(content);
         }
-        return console.log(`${warnSymbol} | ${content}`);
+        console.log(`${warnSymbol} | ${content}`);
     }
     /**
      * Prints out a "error" log to the console
@@ -89,17 +85,17 @@ class Logger {
     error(content, confirmRedify) {
         var _a;
         let errorSymbol;
-        let redify = chalk_1.default.red;
+        const redify = chalk_1.default.red;
         if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.error) {
-            errorSymbol = this.ResolveChalkColor("RED", this._useCustomLabel.error);
+            errorSymbol = this.resolveChalkColor("RED", this._useCustomLabel.error);
         }
         else {
-            errorSymbol = this.ResolveChalkColor("RED", this._defaultOptions.symbols.error);
+            errorSymbol = this.resolveChalkColor("RED", this._defaultOptions.symbols.error);
         }
         if (confirmRedify) {
             redify(content);
         }
-        return console.log(`${errorSymbol} | ${content}`);
+        console.log(`${errorSymbol} | ${content}`);
     }
     /**
      * Prints out a "success" log to the console
@@ -108,17 +104,17 @@ class Logger {
     success(content, confirmGreenify) {
         var _a;
         let successSymbol;
-        let greenify = chalk_1.default.green;
+        const greenify = chalk_1.default.green;
         if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.success) {
-            successSymbol = this.ResolveChalkColor("GREEN", this._useCustomLabel.success);
+            successSymbol = this.resolveChalkColor("GREEN", this._useCustomLabel.success);
         }
         else {
-            successSymbol = this.ResolveChalkColor("GREEN", this._defaultOptions.symbols.success);
+            successSymbol = this.resolveChalkColor("GREEN", this._defaultOptions.symbols.success);
         }
         if (confirmGreenify) {
             greenify(content);
         }
-        return console.log(`${successSymbol} | ${content}`);
+        console.log(`${successSymbol} | ${content}`);
     }
 }
 exports.Logger = Logger;

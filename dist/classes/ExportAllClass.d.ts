@@ -3,4 +3,3 @@ export * from "./QRcodeClass";
 export * from "./ApiClass";
 export * from "./UtilsClass";
 export * from "./LoggerClass";
-export * from "./EmbedClass";

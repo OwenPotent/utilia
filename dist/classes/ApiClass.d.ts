@@ -1,17 +1,16 @@
 export declare class Api {
     private _url;
-    private _tinyUrl;
     /**
      * Gives you a joke
      *
-     * @returns A joke from the api
+     * @returns A joke from the API
      */
     getJoke(): Promise<any>;
     /**
      * Encodes a string or word
      *
      * @param text The text you wish to encode
-     * @returns binary code
+     * @returns Binary code
      */
     encode(text: string): Promise<any>;
     /**
@@ -25,8 +24,7 @@ export declare class Api {
      * Gets the info on a color hex
      *
      * @param colorHex - Color hex | must start with "#" (Example: "#87ceeb")
-     *
-     * @returns color hex info
+     * @returns Color hex info
      */
     getColor(colorHex: string): Promise<any>;
     /**
@@ -37,15 +35,15 @@ export declare class Api {
      */
     mockText(text: string): Promise<any>;
     /**
-     * Gets info of a meme from reddit
+     * Gets info of a meme from Reddit
      *
-     * @returns meme in a json file
+     * @returns Meme in a JSON file
      */
     getMeme(): Promise<any>;
     /**
-     * Gets answers from an 8ball api
+     * Gets answers from an 8ball API
      *
-     * @returns the answer
+     * @returns The answer
      */
     eightBall(): Promise<any>;
     /**
@@ -63,10 +61,10 @@ export declare class Api {
      */
     getPlaystoreApp(app: string): Promise<any>;
     /**
-     * Gets info of a song from Itunes
+     * Gets info of a song from iTunes
      *
-     * @param song song you wish to search
-     * @returns song info
+     * @param song Song you wish to search
+     * @returns Song info
      */
     getItunesMusic(song: string): Promise<any>;
     /**
@@ -77,7 +75,7 @@ export declare class Api {
      */
     doublestruck(text: string): Promise<any>;
     /**
-     * Converts provided text to morse code
+     * Converts provided text to Morse code
      *
      * @param text Text you wish to convert
      * @returns Morse code

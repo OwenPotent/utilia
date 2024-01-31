@@ -1,47 +1,48 @@
 import fetch from "node-fetch";
 
 export class Api {
-    private _url = "https://api.popcatdev.repl.co/"
-    private _tinyUrl = "https://tinyurl.com/api-create.php"
+    private _url = "https://api.popcatdev.repl.co/";
 
     /**
      * Gives you a joke
      * 
-     * @returns A joke from the api
+     * @returns A joke from the API
      */
-
-    public async getJoke() {
-        this._url += 'joke'
-        let res = await fetch(this._url)
+    public async getJoke(): Promise<any> {
+        const url = `${this._url}joke`;
+        const res = await fetch(url);
 
         if (!res) {
-            return "No data available"
+            return "No data available";
         }
 
-        let jokes = res.json()
-        return jokes
+        const joke = await res.json();
+        return joke;
     }
 
     /**
      * Encodes a string or word
      * 
      * @param text The text you wish to encode
-     * @returns binary code
+     * @returns Binary code
      */
-
     public async encode(text: string): Promise<any> {
-        if (!text) throw new Error("Utilia: No text specified.")
-        if (typeof text !== 'string') throw new TypeError("Utilia: text is not a type of string.")
-        this._url += `encode?text=${text}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!text) {
+            throw new Error("Utilia: No text specified.");
+        }
+        if (typeof text !== 'string') {
+            throw new TypeError("Utilia: text is not a type of string.");
         }
 
-        let encoded = res.json()
-        return encoded
+        const url = `${this._url}encode?text=${text}`;
+        const res = await fetch(url);
+
+        if (!res) {
+            return "No data available";
+        }
+
+        const encoded = await res.json();
+        return encoded;
     }
 
     /**
@@ -50,45 +51,51 @@ export class Api {
      * @param binaryCode Binary code you wish to decode (Example: 0100010100101)
      * @returns Decoded text
      */
-
     public async decode(binaryCode: number): Promise<any> {
-        if (!binaryCode) throw new Error("Utilia: No binary code specified.")
-        if (typeof binaryCode !== 'number') throw new TypeError("Utilia: binary is not a type of number.")
-        this._url += `decode?binary=${binaryCode}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!binaryCode) {
+            throw new Error("Utilia: No binary code specified.");
+        }
+        if (typeof binaryCode !== 'number') {
+            throw new TypeError("Utilia: binary is not a type of number.");
         }
 
-        let decoded = res.json()
-        return decoded
+        const url = `${this._url}decode?binary=${binaryCode}`;
+        const res = await fetch(url);
+
+        if (!res) {
+            return "No data available";
+        }
+
+        const decoded = await res.json();
+        return decoded;
     }
 
     /**
      * Gets the info on a color hex
      * 
      * @param colorHex - Color hex | must start with "#" (Example: "#87ceeb")
-     * 
-     * @returns color hex info 
+     * @returns Color hex info 
      */
-
     public async getColor(colorHex: string): Promise<any> {
-        if (!colorHex) throw new Error("Utilia: No color hex specified.")
-        if (typeof colorHex !== 'string') throw new Error("Utilia: colorHex is not a type of string")
-        if (!colorHex.startsWith("#")) throw new Error("Utilia: colorHex must start with a \"#\"")
-        this._url += `color/${colorHex}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!colorHex) {
+            throw new Error("Utilia: No color hex specified.");
+        }
+        if (typeof colorHex !== 'string') {
+            throw new Error("Utilia: colorHex is not a type of string");
+        }
+        if (!colorHex.startsWith("#")) {
+            throw new Error("Utilia: colorHex must start with a \"#\"");
         }
 
-        let color = res.json()
+        const url = `${this._url}color/${colorHex}`;
+        const res = await fetch(url);
 
-        return color
+        if (!res) {
+            return "No data available";
+        }
+
+        const color = await res.json();
+        return color;
     }
 
     /**
@@ -97,62 +104,57 @@ export class Api {
      * @param text The text you wish to mock
      * @returns Mocked text (Example: "tHis ApI Is bAd")
      */
-
     public async mockText(text: string): Promise<any> {
-        if (!text) throw new Error("Utilia: No text specified.")
-        if (typeof text !== 'string') throw new TypeError("Utilia: text is not a type of string.")
-
-        this._url += `mock?text=${text}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!text) {
+            throw new Error("Utilia: No text specified.");
+        }
+        if (typeof text !== 'string') {
+            throw new TypeError("Utilia: text is not a type of string.");
         }
 
-        let mock = res.json()
+        const url = `${this._url}mock?text=${text}`;
+        const res = await fetch(url);
 
-        return mock
+        if (!res) {
+            return "No data available";
+        }
+
+        const mock = await res.json();
+        return mock;
     }
 
     /**
-     * Gets info of a meme from reddit
+     * Gets info of a meme from Reddit
      * 
-     * @returns meme in a json file
+     * @returns Meme in a JSON file
      */
-
     public async getMeme(): Promise<any> {
-        this._url += `meme`
-
-        let res = await fetch(this._url)
+        const url = `${this._url}meme`;
+        const res = await fetch(url);
 
         if (!res) {
-            return "No data available"
+            return "No data available";
         }
 
-        let meme = res.json()
-
-        return meme
+        const meme = await res.json();
+        return meme;
     }
 
     /**
-     * Gets answers from an 8ball api
+     * Gets answers from an 8ball API
      * 
-     * @returns the answer
+     * @returns The answer
      */
-
     public async eightBall(): Promise<any> {
-        this._url += `8ball`
-
-        let res = await fetch(this._url)
+        const url = `${this._url}8ball`;
+        const res = await fetch(url);
 
         if (!res) {
-            return "No data available"
+            return "No data available";
         }
 
-        let ans = res.json()
-
-        return ans
+        const ans = await res.json();
+        return ans;
     }
 
     /**
@@ -161,22 +163,23 @@ export class Api {
      * @param text Text you wish to reverse
      * @returns Reversed text
      */
-
     public async reverseText(text: string): Promise<any> {
-        if (!text) throw new Error("Utilia: No text specified.")
-        if (typeof text !== 'string') throw new TypeError("Utilia: text is not a type of string.")
-
-        this._url += `reverse?text${text}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!text) {
+            throw new Error("Utilia: No text specified.");
+        }
+        if (typeof text !== 'string') {
+            throw new TypeError("Utilia: text is not a type of string.");
         }
 
-        let reversed = res.json()
+        const url = `${this._url}reverse?text=${text}`;
+        const res = await fetch(url);
 
-        return reversed
+        if (!res) {
+            return "No data available";
+        }
+
+        const reversed = await res.json();
+        return reversed;
     }
 
     /**
@@ -185,44 +188,48 @@ export class Api {
      * @param app App you wish to search
      * @returns App info
      */
-
     public async getPlaystoreApp(app: string): Promise<any> {
-        if (!app) throw new Error("Utilia: No app specified.")
-        if (typeof app !== 'string') throw new TypeError("Utilia: app is not a type of string.")
-        this._url += `playstore?q=${app}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!app) {
+            throw new Error("Utilia: No app specified.");
+        }
+        if (typeof app !== 'string') {
+            throw new TypeError("Utilia: app is not a type of string.");
         }
 
-        let appGot = res.json()
+        const url = `${this._url}playstore?q=${app}`;
+        const res = await fetch(url);
 
-        return appGot
+        if (!res) {
+            return "No data available";
+        }
+
+        const appGot = await res.json();
+        return appGot;
     }
 
     /**
-     * Gets info of a song from Itunes
+     * Gets info of a song from iTunes
      * 
-     * @param song song you wish to search
-     * @returns song info
+     * @param song Song you wish to search
+     * @returns Song info
      */
-
     public async getItunesMusic(song: string): Promise<any> {
-        if (!song) throw new Error("Utilia: No song specified.")
-        if (typeof song !== 'string') throw new TypeError("Utilia: song is not a type of string.")
-        this._url += `itunes?q=${song}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!song) {
+            throw new Error("Utilia: No song specified.");
+        }
+        if (typeof song !== 'string') {
+            throw new TypeError("Utilia: song is not a type of string.");
         }
 
-        let songGot = res.json()
+        const url = `${this._url}itunes?q=${song}`;
+        const res = await fetch(url);
 
-        return songGot
+        if (!res) {
+            return "No data available";
+        }
+
+        const songGot = await res.json();
+        return songGot;
     }
 
     /**
@@ -231,44 +238,48 @@ export class Api {
      * @param text Text you wish to convert
      * @returns Doublestruck text
      */
-
     public async doublestruck(text: string): Promise<any> {
-        if (!text) throw new Error("Utilia: No text specified.")
-        if (typeof text !== 'string') throw new TypeError("Utilia: text is not a type of string.")
-        this._url += `doublestruck?text=${text}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!text) {
+            throw new Error("Utilia: No text specified.");
+        }
+        if (typeof text !== 'string') {
+            throw new TypeError("Utilia: text is not a type of string.");
         }
 
-        let dtext = res.json()
+        const url = `${this._url}doublestruck?text=${text}`;
+        const res = await fetch(url);
 
-        return dtext
+        if (!res) {
+            return "No data available";
+        }
+
+        const dtext = await res.json();
+        return dtext;
     }
 
     /**
-     * Converts provided text to morse code
+     * Converts provided text to Morse code
      * 
      * @param text Text you wish to convert
      * @returns Morse code
      */
-
     public async textToMorse(text: string): Promise<any> {
-        if (!text) throw new Error("Utilia: No text specified.")
-        if (typeof text !== 'string') throw new TypeError("Utilia: text is not a type of string.")
-        this._url += `texttomorse?text=${text}`
-
-        let res = await fetch(this._url)
-
-        if (!res) {
-            return "No data available"
+        if (!text) {
+            throw new Error("Utilia: No text specified.");
+        }
+        if (typeof text !== 'string') {
+            throw new TypeError("Utilia: text is not a type of string.");
         }
 
-        let ttm = res.json()
+        const url = `${this._url}texttomorse?text=${text}`;
+        const res = await fetch(url);
 
-        return ttm
+        if (!res) {
+            return "No data available";
+        }
+
+        const ttm = await res.json();
+        return ttm;
     }
 
     /**
@@ -276,18 +287,15 @@ export class Api {
      * 
      * @returns Two options
      */
-
     public async wyr(): Promise<any> {
-        this._url += 'wyr'
-
-        let res = await fetch(this._url)
+        const url = `${this._url}wyr`;
+        const res = await fetch(url);
 
         if (!res) {
-            return "No data available"
+            return "No data available";
         }
 
-        let wyr = res.json()
-
-        return wyr
+        const wyr = await res.json();
+        return wyr;
     }
 }

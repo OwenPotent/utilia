@@ -117,10 +117,10 @@ export class Captcha {
     }
 
     get JPEGStream(): Canvas.JPEGStream {
-		return this._canvas.createJPEGStream();
-	}
+        return this._canvas.createJPEGStream();
+    }
 
-	get dataURL(): string {
-		return this._canvas.toDataURL("image/jpeg");
-	}
+    get dataURL(): string {
+        return this._canvas.toDataURL("image/jpeg");
+    }
 }

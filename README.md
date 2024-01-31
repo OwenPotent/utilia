@@ -1,93 +1,65 @@
-[![NPM](https://nodei.co/npm/utilia.png)](https://nodei.co/npm/utilia/)
-
 # Utilia
 
-An NPM package for you to use on your Discord Bot or JavaScript projects! This is still however in development and countless of errors have been encountered, if you wish to help me add features, make a pull request at the github page!
+[![NPM](https://nodei.co/npm/utilia.png)](https://nodei.co/npm/utilia/)
+
+Utilia is an NPM package for use in Discord Bot or JavaScript projects. It is still in development, and if you encounter any errors or would like to contribute, please make a pull request on the [GitHub page](https://github.com/OwenPotent/utilia)!
 
 ## What's New?
 
 ### Added:
 
-#### **Functions**
+#### DATABASE
 
-- checkForContents | This function checks if a file or directory exists.
-
-  ```js
-  const fs = require("fs");
-  const { checkForContents } = require("utilia");
-
-  const file = "./test.txt";
-
-  // Check for file
-  checkForContents(file, "file");
-  ```
-
-- getAllFiles | This function returns all files in a directory.
+- `UtiliaDB`: This class is somewhat of an inspiration of the `quick.db` package. It is a simple database that can store data in JSON format. It is not recommended to use this database for large projects, as it is not optimized for that.
 
   ```js
-  const { getAllFiles } = require("utilia");
+  const { UtiliaDB } = require("utilia");
 
-  console.log(getAllFiles("./"));
+  // Create a new database
+  const db = new UtiliaDB("database.json");
+
+  // Create a table
+  db.insert("users", {
+    id: "1234567890",
+    name: "Owen",
+    age: 16
+  });
+
+  db.find("users", "1234567890"); // { id: "1234567890", name: "Owen", age: 16 }
+
+  db.update("users", "1234567890", {
+    name: "Owen Potent"
+  });
+
+  db.delete("users", "1234567890");
+
+  db.filter("users", (user) => user.age > 16); // [{ id: "1234567890", name: "Owen Potent", age: 17 }]
+  
+  db.createBackup("users"); // Creates a backup of the users table
+
+  db.removeDatabase(); // Removes the database file
   ```
-
-  Output:
-
-  ```
-  [
-    "./README.md",
-    "./package.json",
-    "./package-lock.json",
-    "./test.txt"
-  ]
-  ```
-
-#### **Classes**
-
-    - Embedder | This class is an extended class of the Discord.js Embed class.
-
-    ```js
-      const { Embedder } = require("utilia");
-
-      const options = {
-          useCodeblockInDescription: true,
-          useBoldInDescription: true,
-          useTimestamp: true
-      }
-
-        const embedder = new Embedder(options);
-        const embed = embedder.createEmbed({
-            title: "Test",
-            description: "This is a test",
-            color: "red"
-        });
-
-        console.log(embed);
-    ```
 
 ## Getting Started
 
 To get started, install the npm package by running the command below:
 
 With NPM:
-
-```shell
-npm install --save utilia
-```
+  
+  ```bash
+  npm install utilia
+  ```
 
 With Yarn:
 
-```shell
-yarn add utilia
-```
+  ```bash
+  yarn add utilia
+  ```
 
-# Additional Info
+## Additional Information
 
-Utilia.Embedder - A custom but more cleaner embed feature highly inspired from the [discord.js](https://discord.js.org) MessageEmbed class.  
-Utilia.hasNitro - Typescript support from the original feature by @thehackerboi69's [discord-premium-utils](https://www.npmjs.com/package/discord-premium-utils) dependency.
+### Links
 
-# Links
-
-- [Source Code](https://github.com/OwenPotent/utilia)
-- [Documentation](https://owenpotent.github.io/utilia)
-
-## More coming soon!
+- [GitHub](https://github.com/OwenPotent/utilia)
+- [NPM](https://npmjs.com/package/utilia)
+- [Docs](https://owenpotent.github.io/utilia)

@@ -5,10 +5,10 @@ class QRCode {
     constructor(parameters) {
         this._data = "";
         this.parametersJson = {
-            "size": 250,
-            "backgroundColor": "38-38-38",
-            "qrColor": "255-255-255",
-            "padding": 2, // Padding
+            size: 250,
+            backgroundColor: "38-38-38",
+            qrColor: "255-255-255",
+            padding: 2, // Padding
         };
         this._data = parameters.data;
     }

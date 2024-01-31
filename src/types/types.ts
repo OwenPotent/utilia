@@ -19,9 +19,3 @@ export interface loggerOptions {
         success?: string
     }
 }
-
-export interface EmbedderOptions {
-    useCodeblockInDescription?: boolean,
-    useBoldInDescription?: boolean,
-    useTimestamp?: boolean
-}
