@@ -1,5 +1,8 @@
 import fetch from "node-fetch";
 
+/**
+ * The API class is used to get data from the API
+ */
 export class Api {
     private _url = "https://api.popcatdev.repl.co/";
 

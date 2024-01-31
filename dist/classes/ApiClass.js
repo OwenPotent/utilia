@@ -14,6 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Api = void 0;
 const node_fetch_1 = __importDefault(require("node-fetch"));
+/**
+ * The API class is used to get data from the API
+ */
 class Api {
     constructor() {
         this._url = "https://api.popcatdev.repl.co/";

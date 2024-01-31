@@ -1,3 +1,6 @@
+/**
+ * The API class is used to get data from the API
+ */
 export declare class Api {
     private _url;
     /**

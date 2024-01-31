@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UtiliaDB = void 0;
 const fs_1 = __importDefault(require("fs"));
 const chalk_1 = __importDefault(require("chalk"));
 const ms_1 = __importDefault(require("ms"));
@@ -18,10 +19,10 @@ class UtiliaDB {
      * @param filePath The path to the JSON file where the data will be stored.
      * @param logger The logger instance used for logging database operations.
      */
-    constructor(filePath, logger) {
+    constructor(filePath) {
+        this.logger = new Logger();
         this.data = {};
         this.filePath = filePath;
-        this.logger = logger;
     }
     /**
      * Inserts a key-value pair into the database.
@@ -108,7 +109,7 @@ class UtiliaDB {
         this.logger.log(`Saved data to file at '${this.filePath}'.`);
     }
 }
-exports.default = UtiliaDB;
+exports.UtiliaDB = UtiliaDB;
 /**
  * The Logger class provides logging functionality for the UtiliaDB class.
  * It supports logging messages with different log levels.

@@ -8,20 +8,19 @@ import ms from 'ms';
  * The data is stored in a JSON file specified by the filePath parameter.
  * The logger parameter is used for logging database operations.
  */
-export default class UtiliaDB {
+export class UtiliaDB {
     private data: Record<string, any>;
     private filePath: string;
-    private logger: Logger;
+    private logger: Logger = new Logger();
 
     /**
      * Constructs a new UtiliaDB instance.
      * @param filePath The path to the JSON file where the data will be stored.
      * @param logger The logger instance used for logging database operations.
      */
-    constructor(filePath: string, logger: Logger) {
+    constructor(filePath: string) {
         this.data = {};
         this.filePath = filePath;
-        this.logger = logger;
     }
 
     /**
