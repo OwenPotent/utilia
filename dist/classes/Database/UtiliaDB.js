@@ -108,6 +108,7 @@ class UtiliaDB {
         this.logger.log(`Saved data to file at '${this.filePath}'.`);
     }
 }
+exports.default = UtiliaDB;
 /**
  * The Logger class provides logging functionality for the UtiliaDB class.
  * It supports logging messages with different log levels.

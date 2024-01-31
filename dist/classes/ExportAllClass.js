@@ -19,3 +19,4 @@ __exportStar(require("./QRcodeClass"), exports);
 __exportStar(require("./ApiClass"), exports);
 __exportStar(require("./UtilsClass"), exports);
 __exportStar(require("./LoggerClass"), exports);
+__exportStar(require("./Database/UtiliaDB"), exports);

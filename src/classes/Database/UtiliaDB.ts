@@ -8,7 +8,7 @@ import ms from 'ms';
  * The data is stored in a JSON file specified by the filePath parameter.
  * The logger parameter is used for logging database operations.
  */
-class UtiliaDB {
+export default class UtiliaDB {
     private data: Record<string, any>;
     private filePath: string;
     private logger: Logger;

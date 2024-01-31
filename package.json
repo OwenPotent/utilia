@@ -1,6 +1,6 @@
 {
   "name": "utilia",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A utility package for you to use in your projects!",
   "main": "./dist/index.js",
   "scripts": {
