@@ -1,7 +1,7 @@
 /**
  * Represents a table with headers and rows.
  */
-class Table {
+export class Table {
     private headers: string[];
     private rows: string[][];
 
@@ -81,5 +81,3 @@ class Table {
         this.rows = [];
     }
 }
-
-export default Table;

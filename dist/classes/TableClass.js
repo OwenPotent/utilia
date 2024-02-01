@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Table = void 0;
 /**
  * Represents a table with headers and rows.
  */
@@ -73,4 +74,4 @@ class Table {
         this.rows = [];
     }
 }
-exports.default = Table;
+exports.Table = Table;

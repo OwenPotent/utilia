@@ -1,10 +1,9 @@
 {
   "name": "utilia",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "A utility package for you to use in your projects or a Discord bot!",
   "main": "./dist/index.js",
   "scripts": {
-    "publish": "npm run build && npm publish",
     "build": "npm run build:dev && npm run docs",
     "build:dev": "tsc --build tsconfig.json",
     "docs": "typedoc --out ./docs ./src/index.ts --plugin typedoc-material-theme --themeColor '#cb9820'"

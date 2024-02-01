@@ -3,7 +3,7 @@ import { Client, Guild, TextChannel, VoiceChannel, CategoryChannel, ChannelType 
 /**
  * The ChannelCreator class provides methods to create, delete, rename, and move channels in a Discord guild.
  */
-class ChannelCreator {
+export class ChannelCreator {
     private client: Client;
 
     /**
@@ -88,5 +88,3 @@ class ChannelCreator {
         await channel.setParent(newParent);
     }
 }
-
-export default ChannelCreator;

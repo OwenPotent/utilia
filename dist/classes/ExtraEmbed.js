@@ -1,32 +1,29 @@
-import { EmbedBuilder } from 'discord.js';
-import { ExtraEmbedColor, ExtraEmbedOptions } from '../../types/types';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExtraEmbed = void 0;
+const discord_js_1 = require("discord.js");
 /**
  * Represents an extended version of EmbedBuilder with additional features.
  */
-class ExtraEmbed extends EmbedBuilder {
+class ExtraEmbed extends discord_js_1.EmbedBuilder {
     /**
      * Creates a new instance of ExtraEmbed.
      * @param color - The color of the embed.
      * @param options - The additional options for the embed.
      */
-    constructor(color: ExtraEmbedColor = 'Default', options?: ExtraEmbedOptions) {
+    constructor(color = 'Default', options) {
         super();
         this.setColor(color);
-
         if (options?.timestamp) {
             this.setTimestamp();
         }
-
         if (options?.author) {
             this.setAuthor(options.author.data);
         }
-
         if (options?.footer) {
             this.setFooter(options.footer.data);
         }
     }
-
     /**
      * Sets the description of the embed.
      * @param description - The description text.
@@ -34,7 +31,7 @@ class ExtraEmbed extends EmbedBuilder {
      * @param language - The language of the code block.
      * @returns The updated ExtraEmbed instance.
      */
-    setDescription(description: string, codeblocks: boolean = false, language?: string): this {
+    setDescription(description, codeblocks = false, language) {
         if (codeblocks) {
             const codeblockLanguage = language ? language : 'typescript';
             description = '```' + codeblockLanguage + '\n' + description + '\n```';
@@ -42,5 +39,4 @@ class ExtraEmbed extends EmbedBuilder {
         return super.setDescription(description);
     }
 }
-
-export default ExtraEmbed;
+exports.ExtraEmbed = ExtraEmbed;
