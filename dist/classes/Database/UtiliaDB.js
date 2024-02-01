@@ -14,13 +14,15 @@ const ms_1 = __importDefault(require("ms"));
  * The logger parameter is used for logging database operations.
  */
 class UtiliaDB {
+    data;
+    filePath;
+    logger = new Logger();
     /**
      * Constructs a new UtiliaDB instance.
      * @param filePath The path to the JSON file where the data will be stored.
      * @param logger The logger instance used for logging database operations.
      */
     constructor(filePath) {
-        this.logger = new Logger();
         this.data = {};
         this.filePath = filePath;
     }

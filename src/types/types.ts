@@ -1,4 +1,7 @@
+import { ColorResolvable, EmbedAuthorOptions, EmbedFooterOptions } from "discord.js";
+
 type padding = "1" | "2" | "3" | "4" | "5"
+export type ExtraEmbedColor = ColorResolvable | 'Default';
 
 export interface parameters {
     size?: number | 250,
@@ -17,3 +20,17 @@ export interface loggerOptions {
         success?: string
     }
 }
+
+export interface ExtraEmbedOptions {
+    timestamp?: boolean;
+    author?: {
+        data: EmbedAuthorOptions
+    };
+    footer?: {
+        data: EmbedFooterOptions
+    };
+    codeblocks?: {
+        language?: string;
+    };
+}
+

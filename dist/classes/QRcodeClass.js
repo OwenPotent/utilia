@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QRCode = void 0;
 class QRCode {
+    _data = "";
+    parametersJson = {
+        size: 250, // Size of Qr Code
+        backgroundColor: "38-38-38", // Background Color Of Qr Code (In RGB)
+        qrColor: "255-255-255", // Color of Qr Code (In RGB)
+        padding: 2, // Padding
+    };
     constructor(parameters) {
-        this._data = "";
-        this.parametersJson = {
-            size: 250,
-            backgroundColor: "38-38-38",
-            qrColor: "255-255-255",
-            padding: 2, // Padding
-        };
         this._data = parameters.data;
     }
     /**

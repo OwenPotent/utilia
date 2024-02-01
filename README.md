@@ -4,6 +4,22 @@
 
 Utilia is an NPM package for use in Discord Bot or JavaScript projects. It is still in development, and if you encounter any errors or would like to contribute, please make a pull request on the [GitHub page](https://github.com/OwenPotent/utilia)!
 
+For more information, please visit the [documentation](https://owenpotent.github.io/utilia).
+
+## Table of Contents
+
+- [Utilia](#utilia)
+  - [Table of Contents](#table-of-contents)
+  - [What's New?](#whats-new)
+    - [Added:](#added)
+      - [DATABASE](#database)
+      - [CHANNELCREATOR](#channelcreator)
+      - [EXTRAEMBED](#extraembed)
+  - [Getting Started](#getting-started)
+  - [Additional Information](#additional-information)
+    - [Links](#links)
+      - [Made with ❤️ by OwenPotent](#made-with-️-by-owenpotent)
+
 ## What's New?
 
 ### Added:
@@ -40,6 +56,72 @@ Utilia is an NPM package for use in Discord Bot or JavaScript projects. It is st
   db.removeDatabase(); // Removes the database file
   ```
 
+#### CHANNELCREATOR
+
+- `ChannelCreator`: This class is used to create channels in a guild. It is very simple and easy to use for your discord bot. This class is still in development, and will be updated with more features in the future.
+
+  ```js
+  const { ChannelCreator } = require("utilia");
+
+  // Create a new channel creator
+  const channelCreator = new ChannelCreator();
+
+  // Create a text channel
+  channelCreator.createTextChannel(message.guild, "Hello World");
+
+  // Create a voice channel
+  channelCreator.createVoiceChannel(message.guild, "Hello World");
+
+  // Create a category
+  channelCreator.createCategory(message.guild, "Hello World");
+
+  // Delete a channel
+  channelCreator.deleteChannel(message.guild.channels.cache.get("1234567890"));
+
+  // Rename a channel
+  channelCreator.renameChannel(message.guild.channels.cache.get("1234567890"), "Hello World");
+
+  // Move a channel
+  channelCreator.moveChannel(message.guild.channels.cache.get("1234567890"), message.guild.categories.cache.get("1234567890"));
+  ```
+
+#### EXTRAEMBED
+
+- `ExtraEmbed`: This class is an extension of the `discord.js` `EmbedBuilder` class. It adds some extra features to the embed class.
+
+  ```js
+  const { ExtraEmbed } = require("utilia");
+
+  // Create a new embed
+  const embed = new ExtraEmbed(
+    color: "Random",
+    options:  {
+      timestamp: true,
+      author:   {
+        data: {
+          name: "test",
+          url?: "https://example.com",
+          icon_url?: "https://example.com"
+        }
+      },
+      footer:   {
+        data: {
+          text: "test",
+          icon_url?: "https://example.com"
+        }
+      },
+
+      // Setting a codeblock beforehand
+      codeblocks?: {
+        language?: "js",
+      }
+    }
+  );
+
+  // Manually set a codeblock
+  embed.setDescription("Hello World", true, "js");
+  ```
+
 ## Getting Started
 
 To get started, install the npm package by running the command below:
@@ -63,3 +145,5 @@ With Yarn:
 - [GitHub](https://github.com/OwenPotent/utilia)
 - [NPM](https://npmjs.com/package/utilia)
 - [Docs](https://owenpotent.github.io/utilia)
+
+#### Made with ❤️ by [OwenPotent](https://github.com/OwenPotent)

@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Logger = void 0;
 const chalk_1 = __importDefault(require("chalk"));
 class Logger {
+    _useDefault;
+    _useCustomLabel;
+    _defaultOptions;
     constructor(options) {
         if (options.useDefault) {
             this._useDefault = options.useDefault;
@@ -40,10 +43,9 @@ class Logger {
      * @param confirmBlueify Whether you want the message to be blue colored
      */
     ready(content, confirmBlueify) {
-        var _a;
         let readySymbol;
         const blueify = chalk_1.default.blue;
-        if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.ready) {
+        if (this._useCustomLabel?.ready) {
             readySymbol = this.resolveChalkColor("BLUE", this._useCustomLabel.ready);
         }
         else {
@@ -64,10 +66,9 @@ class Logger {
      * @param confirmYellowify Whether you want the content given to be yellow colored
      */
     warn(content, confirmYellowify) {
-        var _a;
         let warnSymbol;
         const yellowify = chalk_1.default.yellow;
-        if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.warn) {
+        if (this._useCustomLabel?.warn) {
             warnSymbol = this.resolveChalkColor("YELLOW", this._useCustomLabel.warn);
         }
         else {
@@ -83,10 +84,9 @@ class Logger {
      * @param confirmRedify Whether you want the content given to be red colored
      */
     error(content, confirmRedify) {
-        var _a;
         let errorSymbol;
         const redify = chalk_1.default.red;
-        if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.error) {
+        if (this._useCustomLabel?.error) {
             errorSymbol = this.resolveChalkColor("RED", this._useCustomLabel.error);
         }
         else {
@@ -102,10 +102,9 @@ class Logger {
      * @param confirmGreenify Whether you want the content given to be green colored
      */
     success(content, confirmGreenify) {
-        var _a;
         let successSymbol;
         const greenify = chalk_1.default.green;
-        if ((_a = this._useCustomLabel) === null || _a === void 0 ? void 0 : _a.success) {
+        if (this._useCustomLabel?.success) {
             successSymbol = this.resolveChalkColor("GREEN", this._useCustomLabel.success);
         }
         else {

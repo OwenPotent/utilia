@@ -21,3 +21,5 @@ __exportStar(require("./UtilsClass"), exports);
 __exportStar(require("./LoggerClass"), exports);
 __exportStar(require("./Database/UtiliaDB"), exports);
 __exportStar(require("./TableClass"), exports);
+__exportStar(require("./Discord/ExtraEmbed"), exports);
+__exportStar(require("./Discord/ChannelCreator"), exports);

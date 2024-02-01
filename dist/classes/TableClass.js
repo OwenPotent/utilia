@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Represents a table with headers and rows.
  */
 class Table {
+    headers;
+    rows;
     /**
      * Creates a new instance of the Table class.
      * @param headers - The headers of the table.

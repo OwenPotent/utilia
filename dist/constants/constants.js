@@ -63,4 +63,4 @@ var ColorResolvable;
     ColorResolvable[ColorResolvable["GREYPLE"] = 26] = "GREYPLE";
     ColorResolvable[ColorResolvable["DARK_BUT_NOT_BLACK"] = 27] = "DARK_BUT_NOT_BLACK";
     ColorResolvable[ColorResolvable["NOT_QUITE_BLACK"] = 28] = "NOT_QUITE_BLACK";
-})(ColorResolvable = exports.ColorResolvable || (exports.ColorResolvable = {}));
+})(ColorResolvable || (exports.ColorResolvable = ColorResolvable = {}));
