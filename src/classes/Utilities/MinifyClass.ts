@@ -4,6 +4,8 @@ interface MinifyOptions {
     removeWhitespace?: boolean;
     removeComments?: boolean;
     combineFiles?: boolean;
+    createSourceMap?: boolean;
+    sourceMapFilePath?: string;
 }
 
 /**
@@ -59,6 +61,18 @@ export class FileMinifier {
 
             // Write the combined minified contents to the output file
             fs.writeFileSync(outputFilePath, combinedContents, 'utf-8');
+
+            // Generate and write the source map file if createSourceMap option is true
+            if (this.options.createSourceMap && this.options.sourceMapFilePath) {
+                const sourceMap = {
+                    version: 3,
+                    file: outputFilePath,
+                    sources: this.filePaths,
+                    mappings: ''
+                };
+                const sourceMapContents = JSON.stringify(sourceMap);
+                fs.writeFileSync(this.options.sourceMapFilePath, sourceMapContents, 'utf-8');
+            }
 
             console.log('Files minified and combined successfully!');
         } catch (error) {
