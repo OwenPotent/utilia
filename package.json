@@ -1,6 +1,6 @@
 {
   "name": "utilia",
-  "version": "2.6.0",
+  "version": "2.6.5",
   "description": "A utility package for you to use in your projects or a Discord bot!",
   "main": "./dist/index.js",
   "scripts": {

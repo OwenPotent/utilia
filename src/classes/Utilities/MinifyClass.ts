@@ -9,7 +9,7 @@ interface MinifyOptions {
 /**
  * Class responsible for minifying files by removing whitespace and comments.
  */
-class FileMinifier {
+export class FileMinifier {
     /**
      * Creates an instance of FileMinifier.
      * @param filePaths - The paths to the files to be minified.

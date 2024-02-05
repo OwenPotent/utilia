@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FileMinifier = void 0;
 const fs = __importStar(require("fs"));
 /**
  * Class responsible for minifying files by removing whitespace and comments.
@@ -84,3 +85,4 @@ class FileMinifier {
         }
     }
 }
+exports.FileMinifier = FileMinifier;
