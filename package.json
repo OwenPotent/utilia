@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build:dev && npm run docs",
     "build:dev": "tsc --build tsconfig.json",
-    "docs": "typedoc --out ./docs ./src/index.ts --plugin typedoc-material-theme --themeColor '#cb9820'"
+    "docs": "typedoc --out ./docs ./src/index.ts --plugin typedoc-material-theme --themeColor '#cb9820'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",
   "dependencies": {
@@ -37,7 +38,8 @@
     "console",
     "documentation",
     "docs",
-    "discord.js-v13"
+    "discord.js-v13",
+    "discord.js-v14"
   ],
   "author": "OwenPotent",
   "repository": {
