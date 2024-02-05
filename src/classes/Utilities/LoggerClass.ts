@@ -1,7 +1,10 @@
 import chalk from "chalk";
-import { loggerOptions } from "../types/types";
-import { LoggerColors } from "../constants/constants";
+import { loggerOptions } from "../../types/types";
+import { LoggerColors } from "../../constants/constants";
 
+/**
+ * Logger class for printing logs with different colors and symbols.
+ */
 export class Logger {
     private _useDefault?: boolean | true;
     private _useCustomLabel?: {
@@ -19,6 +22,10 @@ export class Logger {
         };
     };
 
+    /**
+     * Creates a new instance of the Logger class.
+     * @param options The options for configuring the logger.
+     */
     constructor(options: loggerOptions) {
         if (options.useDefault) {
             this._useDefault = options.useDefault;
@@ -33,6 +40,12 @@ export class Logger {
         }
     }
 
+    /**
+     * Resolves the chalk color based on the LoggerColors enum.
+     * @param color The color to resolve.
+     * @param content The content to apply the color to.
+     * @returns The content with the resolved color.
+     */
     private resolveChalkColor(color: LoggerColors, content: any) {
         switch (color) {
             case "DEFAULT":
@@ -51,8 +64,9 @@ export class Logger {
     }
 
     /**
-     * Prints out a "ready" log to the console
-     * @param confirmBlueify Whether you want the message to be blue colored
+     * Prints out a "ready" log to the console.
+     * @param content The content to print.
+     * @param confirmBlueify Whether to apply blue color to the content.
      */
     public ready(content: any, confirmBlueify?: boolean) {
         let readySymbol: string | undefined;
@@ -76,8 +90,9 @@ export class Logger {
     }
 
     /**
-     * Prints out a "warn" log to the console
-     * @param confirmYellowify Whether you want the content given to be yellow colored
+     * Prints out a "warn" log to the console.
+     * @param content The content to print.
+     * @param confirmYellowify Whether to apply yellow color to the content.
      */
     public warn(content: any, confirmYellowify?: boolean) {
         let warnSymbol: string | undefined;
@@ -97,8 +112,9 @@ export class Logger {
     }
 
     /**
-     * Prints out a "error" log to the console
-     * @param confirmRedify Whether you want the content given to be red colored
+     * Prints out an "error" log to the console.
+     * @param content The content to print.
+     * @param confirmRedify Whether to apply red color to the content.
      */
     public error(content: any, confirmRedify?: boolean) {
         let errorSymbol: string | undefined;
@@ -118,8 +134,9 @@ export class Logger {
     }
 
     /**
-     * Prints out a "success" log to the console
-     * @param confirmGreenify Whether you want the content given to be green colored
+     * Prints out a "success" log to the console.
+     * @param content The content to print.
+     * @param confirmGreenify Whether to apply green color to the content.
      */
     public success(content: any, confirmGreenify?: boolean) {
         let successSymbol: string | undefined;

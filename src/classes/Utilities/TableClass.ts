@@ -19,6 +19,9 @@ export class Table {
      * @param row - The row to be added.
      */
     addRow(row: string[]) {
+        if (row.length !== this.headers.length) {
+            throw new Error('Row length does not match the number of columns.');
+        }
         this.rows.push(row);
     }
 

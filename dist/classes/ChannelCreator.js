@@ -21,11 +21,17 @@ class ChannelCreator {
      * @returns {Promise<TextChannel>} - A promise that resolves with the created text channel.
      */
     async createTextChannel(guild, name) {
-        const channel = await guild.channels.create({
-            name,
-            type: discord_js_1.ChannelType.GuildText
-        });
-        return channel;
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: discord_js_1.ChannelType.GuildText
+            });
+            return channel;
+        }
+        catch (error) {
+            console.error(`Failed to create text channel: ${error}`);
+            throw error;
+        }
     }
     /**
      * Creates a voice channel in the specified guild.
@@ -34,11 +40,17 @@ class ChannelCreator {
      * @returns {Promise<VoiceChannel>} - A promise that resolves with the created voice channel.
      */
     async createVoiceChannel(guild, name) {
-        const channel = await guild.channels.create({
-            name,
-            type: discord_js_1.ChannelType.GuildVoice
-        });
-        return channel;
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: discord_js_1.ChannelType.GuildVoice
+            });
+            return channel;
+        }
+        catch (error) {
+            console.error(`Failed to create voice channel: ${error}`);
+            throw error;
+        }
     }
     /**
      * Creates a category channel in the specified guild.
@@ -47,11 +59,17 @@ class ChannelCreator {
      * @returns {Promise<CategoryChannel>} - A promise that resolves with the created category channel.
      */
     async createCategoryChannel(guild, name) {
-        const channel = await guild.channels.create({
-            name,
-            type: discord_js_1.ChannelType.GuildCategory
-        });
-        return channel;
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: discord_js_1.ChannelType.GuildCategory
+            });
+            return channel;
+        }
+        catch (error) {
+            console.error(`Failed to create category channel: ${error}`);
+            throw error;
+        }
     }
     /**
      * Deletes the specified channel.
@@ -59,7 +77,13 @@ class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is deleted.
      */
     async deleteChannel(channel) {
-        await channel.delete();
+        try {
+            await channel.delete();
+        }
+        catch (error) {
+            console.error(`Failed to delete channel: ${error}`);
+            throw error;
+        }
     }
     /**
      * Renames the specified channel.
@@ -68,7 +92,13 @@ class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is renamed.
      */
     async renameChannel(channel, newName) {
-        await channel.setName(newName);
+        try {
+            await channel.setName(newName);
+        }
+        catch (error) {
+            console.error(`Failed to rename channel: ${error}`);
+            throw error;
+        }
     }
     /**
      * Moves the specified channel to a new parent category.
@@ -77,7 +107,13 @@ class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is moved.
      */
     async moveChannel(channel, newParent) {
-        await channel.setParent(newParent);
+        try {
+            await channel.setParent(newParent);
+        }
+        catch (error) {
+            console.error(`Failed to move channel: ${error}`);
+            throw error;
+        }
     }
 }
 exports.ChannelCreator = ChannelCreator;

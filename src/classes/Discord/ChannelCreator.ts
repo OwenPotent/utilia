@@ -21,12 +21,17 @@ export class ChannelCreator {
      * @returns {Promise<TextChannel>} - A promise that resolves with the created text channel.
      */
     async createTextChannel(guild: Guild, name: string): Promise<TextChannel> {
-        const channel = await guild.channels.create({
-            name,
-            type: ChannelType.GuildText
-        });
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: ChannelType.GuildText
+            });
 
-        return channel as TextChannel;
+            return channel as TextChannel;
+        } catch (error) {
+            console.error(`Failed to create text channel: ${error}`);
+            throw error;
+        }
     }
 
     /**
@@ -36,12 +41,17 @@ export class ChannelCreator {
      * @returns {Promise<VoiceChannel>} - A promise that resolves with the created voice channel.
      */
     async createVoiceChannel(guild: Guild, name: string): Promise<VoiceChannel> {
-        const channel = await guild.channels.create({
-            name,
-            type: ChannelType.GuildVoice
-        });
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: ChannelType.GuildVoice
+            });
 
-        return channel as VoiceChannel;
+            return channel as VoiceChannel;
+        } catch (error) {
+            console.error(`Failed to create voice channel: ${error}`);
+            throw error;
+        }
     }
 
     /**
@@ -51,12 +61,17 @@ export class ChannelCreator {
      * @returns {Promise<CategoryChannel>} - A promise that resolves with the created category channel.
      */
     async createCategoryChannel(guild: Guild, name: string): Promise<CategoryChannel> {
-        const channel = await guild.channels.create({
-            name,
-            type: ChannelType.GuildCategory
-        });
+        try {
+            const channel = await guild.channels.create({
+                name,
+                type: ChannelType.GuildCategory
+            });
 
-        return channel as CategoryChannel;
+            return channel as CategoryChannel;
+        } catch (error) {
+            console.error(`Failed to create category channel: ${error}`);
+            throw error;
+        }
     }
 
     /**
@@ -65,7 +80,12 @@ export class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is deleted.
      */
     async deleteChannel(channel: TextChannel | VoiceChannel | CategoryChannel): Promise<void> {
-        await channel.delete();
+        try {
+            await channel.delete();
+        } catch (error) {
+            console.error(`Failed to delete channel: ${error}`);
+            throw error;
+        }
     }
 
     /**
@@ -75,7 +95,12 @@ export class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is renamed.
      */
     async renameChannel(channel: TextChannel | VoiceChannel | CategoryChannel, newName: string): Promise<void> {
-        await channel.setName(newName);
+        try {
+            await channel.setName(newName);
+        } catch (error) {
+            console.error(`Failed to rename channel: ${error}`);
+            throw error;
+        }
     }
 
     /**
@@ -85,6 +110,11 @@ export class ChannelCreator {
      * @returns {Promise<void>} - A promise that resolves when the channel is moved.
      */
     async moveChannel(channel: TextChannel | VoiceChannel | CategoryChannel, newParent: CategoryChannel): Promise<void> {
-        await channel.setParent(newParent);
+        try {
+            await channel.setParent(newParent);
+        } catch (error) {
+            console.error(`Failed to move channel: ${error}`);
+            throw error;
+        }
     }
 }
